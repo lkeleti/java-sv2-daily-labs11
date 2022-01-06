@@ -11,6 +11,13 @@ public class User {
     private int cash;
 
     public User(String userName, int cash) {
+        if (Validator.isEmpty(userName)) {
+            throw new IllegalArgumentException("Username can't be empty!");
+        }
+
+        if (cash < 0) {
+            throw new IllegalArgumentException("Cash can't be negative!");
+        }
         this.userName = userName;
         this.cash = cash;
     }
@@ -28,6 +35,9 @@ public class User {
     }
 
     public void buyItem(Item item, LocalDate dateOfBuy) {
+        if (Validator.isEmptyItem(item)) {
+            throw new NullPointerException("Item can't be null!");
+        }
         if (!checkCash(item.getPrice())) {
             throw new IllegalStateException("Don't have enough money!");
         }
