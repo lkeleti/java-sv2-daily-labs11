@@ -1,8 +1,8 @@
-package day03;
+package day04;
 
 import org.junit.jupiter.api.Test;
 
-import static day03.Validator.isEmpty;
+import static day04.Validator.isEmpty;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidatorTest {
